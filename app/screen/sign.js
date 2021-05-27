@@ -24,6 +24,7 @@ function Sign(props) {
           backgroundColor: 'black',
           width: '100%',
           height: '100%',
+          
         }}>
         <Image
           source={require('../images/background.jpg')}
@@ -36,7 +37,7 @@ function Sign(props) {
             minHeight: Dimensions.get('screen').height,
           }}
         />
-        <ScrollView style={{flex: 1, width: '100%'}}>
+        <ScrollView style={{flex: 1, width: '100%' ,marginTop:50}} >
           <View style={{alignItems: 'center', width: '100%'}}>
             <Image source={require('../images/logo.png')}></Image>
             <View
@@ -45,6 +46,7 @@ function Sign(props) {
                 {
                   flexDirection: 'row',
                   alignItems: 'center',
+                  marginTop:40
                   // height:45
                 },
               ]}>

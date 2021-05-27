@@ -5,80 +5,80 @@ import {
   Text,
   Button,
   Dimensions,
-
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
-
   View,
   Image,
 } from 'react-native';
 import {color} from 'react-native-reanimated';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 import Home from './home';
 
- function Login(props) {
- 
-  
-    return (
-        <KeyboardAvoidingView   style={{
-            alignItems: 'center',
-            backgroundColor: 'black',
-            width: '100%',
-            height: '100%',
-            
-          }}>
-           <Image
-          source={require('../images/background.jpg')}
-          resizeMode="cover"
-          style={{
-            opacity: 0.5,
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-            minHeight: Dimensions.get('screen').height,
-          }}
-        />
-<ScrollView style={{top:30}}>
+function Login(props) {
+  return (
+    <KeyboardAvoidingView
+      style={{
+        alignItems: 'center',
+        backgroundColor: 'black',
+        width: '100%',
+        height: '100%',
+      }}>
+      <Image
+        source={require('../images/background.jpg')}
+        resizeMode="cover"
+        style={{
+          opacity: 0.5,
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          minHeight: Dimensions.get('screen').height,
+        }}
+      />
+      <ScrollView style={{marginTop: 50}}>
         <View style={{}}>
-          <Image source={require('../images/logo.png')}  ></Image>
+          <Image source={require('../images/logo.png')}></Image>
 
           <View
             style={[
               Styles.input,
-              {flexDirection: 'row', alignItems: 'center',
-           // height:45
-            },
+              {
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop:40
+                // height:45
+              },
             ]}>
             <MaterialCommunityIcons name="email" size={25} color="#DB9A11" />
 
             <TextInput
               style={{
-                
                 paddingHorizontal: 15,
- 
               }}
               keyboardType="email-address"
               placeholder="UserName"
               placeholderTextColor="white"
             />
           </View>
-          <View   style={[
+          <View
+            style={[
               Styles.input,
-              {flexDirection: 'row', alignItems: 'center',
-           // height:45
-            },
+              {
+                flexDirection: 'row',
+                alignItems: 'center',
+                // height:45
+              },
             ]}>
-          <MaterialCommunityIcons name="lock" size={25} color="#DB9A11" />
-          <TextInput
-          style={{ paddingHorizontal: 15,}}  
-            keyboardType="visible-password"
-            placeholder="*******"
-            placeholderTextColor="white"
-          />
+            <MaterialCommunityIcons name="lock" size={25} color="#DB9A11" />
+            <TextInput
+              style={{paddingHorizontal: 15}}
+              keyboardType="visible-password"
+              placeholder="*******"
+              placeholderTextColor="white"
+            />
           </View>
           <TouchableOpacity
-            onPress={() =>props.navigation.navigate('Home')}
+            onPress={() => props.navigation.replace('drawerStack')}
             style={{alignItems: 'center'}}>
             <View style={Styles.btn}>
               <Text style={Styles.txt}> Login </Text>
@@ -90,8 +90,7 @@ import Home from './home';
               Forgot Password?
             </Text>
           </View>
-          <TouchableOpacity
-            onPress={() => props.navigation.navigate('Sign')}>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Sign')}>
             <View
               style={{
                 padding: 20,
@@ -100,16 +99,15 @@ import Home from './home';
               }}>
               <Text
                 style={{fontSize: 15, color: 'white', alignItems: 'center'}}>
-                
                 New Here? Sign Up
               </Text>
             </View>
           </TouchableOpacity>
-        </View></ScrollView>
-     </KeyboardAvoidingView>
-    );
-  }
-
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
+  );
+}
 
 const Styles = StyleSheet.create({
   input: {
@@ -117,7 +115,7 @@ const Styles = StyleSheet.create({
     backgroundColor: 'grey',
     opacity: 0.7,
     // padding: 15,
-    paddingHorizontal:10,
+    paddingHorizontal: 10,
     borderColor: 'grey',
     borderWidth: 1,
     borderRadius: 20,
